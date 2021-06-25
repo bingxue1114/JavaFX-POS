@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaDB-PosCrudDao_Custom.jnlp">
+  <information>
+    <title>JavaDB-PosCrudDao_Custom</title>
+    <vendor>bingxue</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaDB-PosCrudDao_Custom.jar" size="23504" download="eager" />
+    <jar href="lib\mariadb-java-client-2.2.3.jar" size="566457" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaDB-PosCrudDao_Custom" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="javadb.poscruddao.JavaDBPosCrudDao"  name="JavaDB-PosCrudDao_Custom" />
+  <update check="always"/>
+</jnlp>
