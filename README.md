@@ -28,3 +28,11 @@
 ▲訂單查詢系統
 
 顧客可以透過此頁面，利用訂單編號（內用/外帶）、訂購者姓名與電話（外送）查詢自己訂單中各項產品是否出餐。
+
+JavaFX附件檔案檔名與系統搭配：
+POS訂購系統：DrinkPOS-DB-Order-JavaFX-Tutorial
+產品管理系統：JavaDB-PosCrudDao
+訂單管理系統：JavaDB-PosCrudDao
+訂單查詢系統：JavaDB-PosCrudDao_Custom
+資料庫：my_pos.sql
+
