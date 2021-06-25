@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="600.0" stylesheets="@../css/bootstrap3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javadb.poscruddao.FXMLDocumentController">
+   <children>
+      <TabPane layoutX="-1.0" layoutY="-2.0" prefHeight="657.0" prefWidth="606.0" stylesheets="@../../css/bootstrap3.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab style="-fx-font-size: 16;" text="產品資料維護">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="620.0" style="-fx-background-color: #8FC1E2;">
+                     <children>
+                        <Button layoutX="362.0" layoutY="396.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="104.0" style="-fx-font-size: 15; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="danger" text="更新這一筆" />
+                        <Button layoutX="478.0" layoutY="395.0" mnemonicParsing="false" onAction="#delete" style="-fx-font-size: 15; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="danger" text="刪除這一筆" />
+                        <Button layoutX="478.0" layoutY="437.0" mnemonicParsing="false" onAction="#insert" style="-fx-font-size: 15; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="danger" text="寫入這一筆" />
+                        <Button layoutX="356.0" layoutY="437.0" mnemonicParsing="false" onAction="#blankRecord" style="-fx-font-size: 15; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="danger" text="新增空白一筆" />
+                        <Separator layoutX="-5.0" layoutY="488.0" prefHeight="0.0" prefWidth="610.0" />
+                        <TextField fx:id="queryID" layoutX="74.0" layoutY="509.0" prefHeight="32.0" prefWidth="192.0" promptText="請輸入編號" style="-fx-font-size: 16;" text="p-j-110" />
+                        <TextField fx:id="queryName" layoutX="74.0" layoutY="557.0" prefHeight="32.0" prefWidth="193.0" promptText="請輸入品名" style="-fx-font-size: 16;" text="\%吐司" />
+                        <Button layoutX="378.0" layoutY="509.0" mnemonicParsing="false" onAction="#findID" style="-fx-font-size: 16;" styleClass="success" text="編號查詢" />
+                        <Button layoutX="378.0" layoutY="557.0" mnemonicParsing="false" onAction="#findName" style="-fx-font-size: 16;" styleClass="success" text="品名查詢" />
+                        <Button layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onAction="#findAll" prefHeight="31.0" prefWidth="121.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-font-size: 16;" styleClass="success" text="顯示全部產品" />
+                        <Separator layoutX="-3.0" layoutY="61.0" prefHeight="0.0" prefWidth="610.0" />
+                        <TableView fx:id="table_pos" layoutX="24.0" layoutY="76.0" prefHeight="286.0" prefWidth="558.0" style="-fx-font-size: 16;">
+                          <columns>
+                            <TableColumn fx:id="col_product_id" prefWidth="74.0" text="編號" />
+                            <TableColumn fx:id="col_category" prefWidth="73.0" text="類別" />
+                              <TableColumn fx:id="col_name" prefWidth="105.0" text="品名" />
+                              <TableColumn fx:id="col_price" prefWidth="71.0" text="價格" />
+                              <TableColumn fx:id="col_photo" prefWidth="74.0" text="圖片" />
+                              <TableColumn fx:id="col_description" prefWidth="159.0" text="敘述" />
+                          </columns>
+                        </TableView>
+                        <Pagination fx:id="pagination" layoutX="60.0" layoutY="404.0" maxPageIndicatorCount="2" prefHeight="67.0" prefWidth="200.0" style="-fx-font-size: 16;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 16;" text="訂單資料表維護">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="614.0" prefWidth="600.0" style="-fx-background-color: #E3AFBC;">
+                     <children>
+                        <Separator layoutX="-5.0" layoutY="488.0" prefHeight="0.0" prefWidth="610.0" />
+                        <TextField fx:id="queryID1" layoutX="63.0" layoutY="513.0" prefHeight="32.0" prefWidth="192.0" promptText="請輸入訂單編號" style="-fx-font-size: 16;" text="ord-101" />
+                        <Button layoutX="364.0" layoutY="513.0" mnemonicParsing="false" onAction="#findOrder_num" style="-fx-font-size: 16;" styleClass="success" text="訂單編號查詢" />
+                        <Button layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onAction="#selectAllCourses" prefHeight="31.0" prefWidth="121.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-font-size: 16;" styleClass="success" text="顯示全部訂單" />
+                        <Separator layoutX="-3.0" layoutY="61.0" prefHeight="0.0" prefWidth="610.0" />
+                        <TableView fx:id="table_order" layoutX="23.0" layoutY="76.0" prefHeight="286.0" prefWidth="558.0" style="-fx-font-size: 16;">
+                           <columns>
+                              <TableColumn fx:id="col_order_num" prefWidth="-1.0" text="訂單編號" />
+                              <TableColumn fx:id="col_order_product_name" prefWidth="-1.0" text="品名" />
+                              <TableColumn fx:id="col_order_quantity" prefWidth="-1.0" text="數量" />
+                              <TableColumn fx:id="col_order_finished" prefWidth="-1.0" text="狀態" />
+                           </columns>
+                        </TableView>
+                        <Pagination fx:id="pagination1" layoutX="127.0" layoutY="382.0" maxPageIndicatorCount="2" prefHeight="67.0" prefWidth="193.0" style="-fx-font-size: 15;" />
+                        <Button layoutX="435.0" layoutY="391.0" mnemonicParsing="false" onAction="#update_order" prefHeight="53.0" prefWidth="146.0" style="-fx-font-size: 20; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="danger" text="已出餐" />
+                        <Button layoutX="364.0" layoutY="556.0" mnemonicParsing="false" onAction="#findNotfinished" prefHeight="36.0" prefWidth="110.0" style="-fx-font-size: 16;" styleClass="success" text="未出餐查詢" />
+                        <Button layoutX="484.0" layoutY="556.0" mnemonicParsing="false" onAction="#findFinished" prefHeight="36.0" prefWidth="105.0" style="-fx-font-size: 16;" styleClass="success" text="已出餐查詢" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
